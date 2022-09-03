@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+{% block content %}
+<body>
+    <style>
+        body {
+            font-family: "Lucida Console", monospace;
+            font-size: 18px;
+            background-color: #fdfdfd;
+        }
+        
+        .head_text {
+            color: white;
+        }
+        
+        .card {
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
+    </style>
+    <div class="w3-card-4">
+        {% for post in post_list %}
+        <header class="w3-container w3-light-blue">
+          <h3><a>Başlık : {{ post.title }}</a></h3>
+        </header>
+        <div class="w3-container w3-light-grey">
+          <p><a>Yazar : {{ post.author }}</a></p>
+          <hr>
+          <p><a>İçerik : {{post.body|slice:":200" }}</a></p>
+        </div>
+        <a href='{% url "post_detail" post.pk %}' class="w3-button w3-block w3-dark-grey">Daha fazla oku &rarr;</a>
+        <hr><hr>
+        {% endfor %}
+        </div>
+{% endblock %}

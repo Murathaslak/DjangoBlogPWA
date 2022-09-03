@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="w3-center">Post Düzenle</h1><br>
+
+    <form action="" method="post"> {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" name="Güncelle"/>
+    </form
+{% endblock content %}

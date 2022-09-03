@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+    <h4> Post Sil <h4>
+    <form active="" method="post"> {% csrf_token %}
+        <p class="w3-text-grey"> {{post.title}} silmek istediğinizden emin misiniz? </p>
+        <input type="submit" value="Evet"/>
+{% endblock content %}
